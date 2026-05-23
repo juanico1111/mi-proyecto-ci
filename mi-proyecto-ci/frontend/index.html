@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto CI</title>
+</head>
+<body>
+  <h1>Frontend - Proyecto Integración Continua</h1>
+  <button onclick="consultarBackend()">Consultar Backend</button>
+  <p id="respuesta"></p>
+
+  <script>
+    async function consultarBackend() {
+      const res = await fetch('http://localhost:3000');
+      const data = await res.json();
+      document.getElementById('respuesta').textContent = data.mensaje;
+    }
+  </script>
+</body>
+</html>
